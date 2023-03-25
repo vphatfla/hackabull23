@@ -12,12 +12,11 @@ import {
   View,
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-function App() {
 
-  const Stack = createNativeStackNavigator();
+
+
+function Home() {
   return (
     <View style={styles.body}>
         <LinearGradient
@@ -64,4 +63,4 @@ const styles = StyleSheet.create({
 });
 
 
-export default App;
+export default Home;
