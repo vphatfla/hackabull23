@@ -7,8 +7,7 @@ const axios = require('axios');
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
-});
-
+});  
 router.get('/getSampleData',async function(req, res, nex){
     await axios({
         method:'get',
