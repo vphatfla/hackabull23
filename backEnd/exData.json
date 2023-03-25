@@ -1,0 +1,33 @@
+[
+    {
+        "SampleDate_t": "Mar 20 2023 ",
+        "LOCATION": "Okaloosa Island Pier",
+        "LATITUDE": 30.3904,
+        "LONGITUDE": -86.59337,
+        "Abundance": "not present/background (0-1,000)",
+        "Source": "FWC-FWRI HAB Database",
+        "County": "Okaloosa",
+        "Distance": -1
+    },
+    {
+        "SampleDate_t": "Mar 21 2023 ",
+        "LOCATION": "Blacks Island; E of (St. Joseph Bay)",
+        "LATITUDE": 29.7202,
+        "LONGITUDE": -85.3228,
+        "SAMPLE_DEPTH": 0.5,
+        "Abundance": "not present/background (0-1,000)",
+        "Source": "FWC-FWRI HAB Database",
+        "County": "Gulf",
+        "Distance": -1
+    },
+    {
+        "SampleDate_t": "Mar 21 2023 ",
+        "LOCATION": "Fort DeSoto East Beach; SW of (Lower Tampa Bay)",
+        "LATITUDE": 27.634,
+        "LONGITUDE": -82.701,
+        "Abundance": "very low (>1,000-10,000)",
+        "Source": "FWC-FWRI HAB Database",
+        "County": "Pinellas",
+        "Distance": -1
+    }
+]
