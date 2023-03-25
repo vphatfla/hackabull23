@@ -1,4 +1,7 @@
 #import "AppDelegate.h"
+#import <GoogleMaps/GoogleMaps.h>
+[GMSServices provideAPIKey:@AIzaSyD_3OQoiAhfN1Y_RyLgQJpNhQpM4mqKeBk
+]
 
 #import <React/RCTBundleURLProvider.h>
 

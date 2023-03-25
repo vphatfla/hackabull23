@@ -5,52 +5,82 @@
  * @format
  */
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import {
-  StyleSheet,
-  Text,
-  View,
+    Alert,
+    Button,
+    StyleSheet,
+    Text,
+    View,
+    LogBox,
 } from 'react-native';
-import LinearGradient from 'react-native-linear-gradient';
+import MapView, { PROVIDER_GOOGLE, Marker, Region } from 'react-native-maps';
+import Geolocation from '@react-native-community/geolocation';
 
+LogBox.ignoreAllLogs(); //Ignore all log notifications
+function Main() {
+    const custom_pins = '../assets/image/pngwing.com.png';
+    const [region, setRegion] = useState({
+        latitude: 0,
+        longitude: 0,
+        latitudeDelta: 1,
+        longitudeDelta: 1
+    });
+    const [markers, setMarkers] = useState([])
+    // const [position, setPosition] = useState({
+    //     lat: 0,
+    //     long: 0,
+    // });
+    useEffect(() => {
+        getCurrentPosition()
+    }, [])
+    const onRegionChange = (region: Region) => {
+        setRegion(
+            region
+        )
+    }
+    const getCurrentPosition = () => {
+        Geolocation.getCurrentPosition(
+            (pos) => {
+                //setPosition(JSON.stringify(pos));
+                onRegionChange({
+                    latitude: pos.coords.latitude,
+                    longitude: pos.coords.longitude,
+                    latitudeDelta: 1,
+                    longitudeDelta: 1
+                })
+            },
+            (error) => Alert.alert('GetCurrentPosition Error', JSON.stringify(error)),
+            { enableHighAccuracy: true }
+        );
+    };
+    return (
+        <View style={styles.body}>
 
+            <MapView
+                provider={PROVIDER_GOOGLE}
+                style={{ flex: 1 }}
+                region={region}
+                onRegionChange={onRegionChange}
+            >
+                <Marker draggable
+                    coordinate={region}
+                    
+                />
+            </MapView>
+        </View>
 
-
-function Home() {
-  return (
-    <View style={styles.body}>
-        Main Screen
-    </View>
-  );
+    );
 }
 
 const styles = StyleSheet.create({
-  body: {
-    flex: 1,
-    alignItems: 'stretch',
-    justifycontent: 'center',
-  },
-  sectionTitle: {
-    fontSize: 100,
-    fontFamily: 'Pacifico-Regular',
-    color: '#E63946',
-  },
-  title1:{
-    fontSize: 100,
-    color: '#E63946',
-    fontFamily: 'Aclonica-Regular'
-  },
-  linearGradient: {
-    flex:1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  descriptionBody: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  }
+    body: {
+        flex: 1,
+        alignItems: 'stretch',
+        justifycontent: 'center',
+    },
+
 });
 
 
-export default Home;
+export default Main;

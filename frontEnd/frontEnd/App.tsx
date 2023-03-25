@@ -14,24 +14,22 @@ import {
 import LinearGradient from 'react-native-linear-gradient';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { HomeTabParamList } from './props/RootStackParam';
+import Home from './screens/Home';
+import Main from './screens/Main'
+
+
 
 function App() {
 
-  const Stack = createNativeStackNavigator();
+  const Stack = createNativeStackNavigator<HomeTabParamList>();
   return (
-    <View style={styles.body}>
-        <LinearGradient
-          colors={['#ECEEA1', '#48AF7E', '#2EACB4', '#2EA7EB']}
-          start={{ x: 0, y: 0 }}
-          end={{ x: 0, y: 1 }}
-          style={styles.linearGradient}
-        >
-          <Text style = {styles.sectionTitle}> Red </Text>
-          <Text style = {styles.title1}>
-            push
-          </Text>
-        </LinearGradient>
-    </View>
+   <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name='Home' component = {Home} options = {{headerShown: false}}/> 
+        <Stack.Screen name='Main' component = {Main} /> 
+      </Stack.Navigator>
+   </NavigationContainer>
   );
 }
 
