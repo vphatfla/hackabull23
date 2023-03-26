@@ -10,6 +10,7 @@ const clearDuplicateData = require('../services/clearDuplicateData');
 const exData = require('../exData.json');
 
 
+
 router.post('/example', async function (req, res, nex) {
   res.json(exData);
 })
@@ -31,6 +32,8 @@ router.post('/', async function (req, res, next) {
   else clearedData = clearDuplicateData(resultFilteredData);
 
   res.json(clearedData);
+
+
 })
 
 module.exports = router;
