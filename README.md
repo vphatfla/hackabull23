@@ -1,5 +1,7 @@
 ![alt text](frontEnd/frontEnd/assets/image/TidesGuard.png)
-
+<p align="center">
+  <img src="frontEnd/frontEnd/assets/image/TidesGuard.png"/>
+</p>
 # Tides Guard - Your Go-To App for Red Tide Updates
 ### Welcome to Tides Guard, a mobile application that provides users with information about nearby beaches affected by red tides.
 
