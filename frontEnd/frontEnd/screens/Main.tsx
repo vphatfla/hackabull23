@@ -17,7 +17,7 @@ import {
 import MapView, { PROVIDER_GOOGLE, Marker, Region } from 'react-native-maps';
 import Geolocation from '@react-native-community/geolocation';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
-
+import axios from 'axios'
 LogBox.ignoreAllLogs(); //Ignore all log notifications
 function Main() {
     const custom_pins = '../assets/image/pngwing.com.png';
@@ -34,6 +34,30 @@ function Main() {
     // });
     useEffect(() => {
         getCurrentPosition()
+        const getData = async () =>{
+                        
+            await fetch("http://localhost:9000/api/example", {
+                method: "POST", // or 'PUT'
+                headers: {
+                "Content-Type": "application/json",
+                },
+            })
+            .then((response) => response.json())
+            .then((data) => {
+            console.log("Success:", data);
+            })
+            .catch((error) => {
+            console.error("Error:", error);
+            });
+            // await axios.post("http://localhost:9000/api/example")
+            //   .then(function (response) {
+            //     console.log(response);
+            //   })
+            //   .catch(function (error) {
+            //     console.log(error);
+            //   });
+        }
+        getData()
     }, [])
     const onRegionChange = (region: Region) => {
         setRegion(
@@ -62,7 +86,6 @@ function Main() {
                 provider={PROVIDER_GOOGLE}
                 style={{ flex: 1 }}
                 region={region}
-                onRegionChange={onRegionChange}
             >
                 <Marker
                     coordinate={region}
