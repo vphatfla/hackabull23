@@ -16,6 +16,7 @@ import {
 } from 'react-native';
 import MapView, { PROVIDER_GOOGLE, Marker, Region } from 'react-native-maps';
 import Geolocation from '@react-native-community/geolocation';
+import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 
 LogBox.ignoreAllLogs(); //Ignore all log notifications
 function Main() {
@@ -63,10 +64,13 @@ function Main() {
                 region={region}
                 onRegionChange={onRegionChange}
             >
-                <Marker draggable
+                <Marker
                     coordinate={region}
-                    
-                />
+                >
+                    <View style={styles.imageStyle}>
+
+                    </View>
+                </Marker>
             </MapView>
         </View>
 
@@ -79,6 +83,13 @@ const styles = StyleSheet.create({
         alignItems: 'stretch',
         justifycontent: 'center',
     },
+    imageStyle: {
+        backgroundColor: 'red',
+        borderRadius: 100,
+    },
+    marker: {
+
+    }
 
 });
 
