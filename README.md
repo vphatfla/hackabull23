@@ -1,8 +1,17 @@
-### hackabull23
-# Welcome to Tides Guard! A mobile application that forcast and give user information about nearby beaches that are affected by red tides. 
+# Tides Guard - Your Go-To App for Red Tide Updates
+### Welcome to Tides Guard, a mobile application that provides users with information about nearby beaches affected by red tides.
 
-## Tides Guard is an application developed by 4 UCF students in the hackathon at USF: hackabull. 
+### Tides Guard was developed by a team of four UCF students for the hackathon at USF, hackabull23.
 
-## Technologies used:
-### 1. Front-end: react-native, typescript, androird studio, and physical devices. 
-### 2. Back-end: express.js, REST APIs. 
+## Technologies Used
+## Tides Guard is built using the following technologies:
+
+### Front-end: React Native, TypeScript, Android Studio, and physical devices.
+### Back-end: Express.js and REST APIs.
+## Features
+### With Tides Guard, you can:
+
+### Get up-to-date information about nearby beaches affected by red tides
+### View detailed forecasts and alerts for affected areas
+### Stay informed with push notifications about new updates
+### Search for specific beaches and view their status
