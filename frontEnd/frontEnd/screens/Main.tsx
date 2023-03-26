@@ -35,12 +35,16 @@ function Main() {
     useEffect(() => {
         getCurrentPosition()
         const getData = async () =>{
-                        
-            await fetch("http://localhost:9000/api/example", {
-                method: "POST", // or 'PUT'
-                headers: {
-                "Content-Type": "application/json",
-                },
+                
+            await fetch("http://10.245.49.99:9000/api/", {
+                method: "POST", // or 'PUT',
+                body: JSON.stringify({
+                    lat: 27,
+                    long: -82
+                }),
+            headers: {
+            "Content-Type": "application/json",
+            },
             })
             .then((response) => response.json())
             .then((data) => {
