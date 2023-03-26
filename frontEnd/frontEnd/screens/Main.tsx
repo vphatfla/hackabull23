@@ -118,9 +118,9 @@ function Main() {
             console.log("FAILED TO CALLED", e)
         }
     }, []);
-    // const handleSheetChanges = useCallback(() => {
-
-    // }, []);
+    const handleSheetChanges = useCallback((index: number) => {
+        console.log('handleSheetChanges', index);
+      }, []);
     const getCurrentPosition = () => {
          Geolocation.getCurrentPosition(
             (pos) => {
@@ -188,9 +188,9 @@ function Main() {
         return (
             <BottomSheetModal
                 ref={bottomSheetModalRef}
-                index={1}
+                index={0}
                 snapPoints={snapPoints}
-            // onChange={handleSheetChanges}
+                onChange={handleSheetChanges}
             >
                 <View style={styles.contentContainer}>
                     <Text>{`Location: ${curMarkerInfo.LOCATION}`}</Text>
@@ -199,6 +199,8 @@ function Main() {
                     <Text>{`Longitude: ${curMarkerInfo.LONGITUDE}`}</Text>
                     <Text>{`Adbundance: ${curMarkerInfo.Abundance}`}</Text>
                     <Text>{`Distance from you: ${curMarkerInfo.Distance}`}</Text>
+
+                    
                 </View>
             </BottomSheetModal>
         )
