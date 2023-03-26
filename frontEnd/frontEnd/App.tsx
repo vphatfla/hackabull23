@@ -17,6 +17,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { HomeTabParamList } from './props/RootStackParam';
 import Home from './screens/Home';
 import Main from './screens/Main'
+import Info from './screens/Info';
 
 
 
@@ -28,6 +29,7 @@ function App() {
       <Stack.Navigator>
         <Stack.Screen name='Home' component = {Home} options = {{headerShown: false}}/> 
         <Stack.Screen name='Main' component = {Main} /> 
+        <Stack.Screen name = 'Info' component={Info} options = {{headerShown: false}}/>
       </Stack.Navigator>
    </NavigationContainer>
   );

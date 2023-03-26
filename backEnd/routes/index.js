@@ -19,7 +19,8 @@ router.post('/', async function (req, res, next) {
   const resultFilteredData = await filteredData();
   const lat = req.body.lat;
   const long = req.body.long;
-
+  console.log("This is index", lat, ' ', long)
+  
   let clearedData;
   if (lat != null && long != null) {
     console.log("lat = ", lat, " long = ", long);
