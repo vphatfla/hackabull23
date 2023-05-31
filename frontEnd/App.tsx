@@ -15,14 +15,27 @@ import {
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { HomeTabParamList } from './props/RootStackParam';
+import {useFonts} from 'expo-font'
+import * as SplashScreen from 'expo-splash-screen'
 import Home from './screens/Home';
 import Main from './screens/Main'
 import Info from './screens/Info';
 
 function App() {
   const Stack = createNativeStackNavigator<HomeTabParamList>();
+  const [fontLoaded] = useFonts({
+    "Pacifico-Regular": require("./assets/fonts/Pacifico-Regular.ttf")
+  })
 
+  useEffect(()=>{
+    (async ()=>await SplashScreen.preventAutoHideAsync())
+  },[])
 
+  if (!fontLoaded){
+    return undefined;
+  } else {
+    SplashScreen.hideAsync()
+  }
   return (
    <NavigationContainer >
       <Stack.Navigator >
@@ -42,7 +55,7 @@ const styles = StyleSheet.create({
   },
   sectionTitle: {
     fontSize: 100,
-    // fontFamily: 'Pacifico-Regular',
+    fontFamily: 'Pacifico-Regular',
     color: '#E63946',
   },
   title1:{

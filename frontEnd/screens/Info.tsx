@@ -125,7 +125,7 @@ const styles = StyleSheet.create({
         fontSize: 80,
         color: '#0077b6',
         textAlign: 'center',
-        // fontFamily: 'Pacifico-Regular',
+        fontFamily: 'Pacifico-Regular',
 
     },
     buttonText: {

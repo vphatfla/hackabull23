@@ -95,7 +95,7 @@ const styles = StyleSheet.create({
     },
     sectionTitle: {
         fontSize: 70,
-        // fontFamily: 'Pacifico-Regular',
+        fontFamily: 'Pacifico-Regular',
         color: '#0077b6',
         textAlign: 'center',
     },
@@ -103,7 +103,7 @@ const styles = StyleSheet.create({
         fontSize: 80,
         color: '#0077b6',
         textAlign: 'center',
-        // fontFamily: 'Pacifico-Regular',
+        fontFamily: 'Pacifico-Regular',
 
     },
     buttonText: {
